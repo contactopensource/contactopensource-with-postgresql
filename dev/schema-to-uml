@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "@startuml"
+echo "skinparam monochrome true"
+echo "hide circle "
+
+cat db/migrations/*/up.* |
+sed '/^$/d; /^--$/d; /^-- /d; s/^\  -- \(.*\)/__ \1 __/; s/^);$/}/g; s/,* -- .*//; s/,$//; /^CREATE INDEX /d; s/CREATE TABLE \([_[:alnum:]]*\) (/class \1 {/; s/, -- / -- /;'
+
+echo "@enduml"
