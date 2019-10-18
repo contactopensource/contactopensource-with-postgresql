@@ -1,0 +1,39 @@
+#!/bin/sh
+test -e .git && exit 1
+git init-empty
+git remote add origin git@github.com:contactopensource/contactopensource_with_postgresql.git
+
+add_starters(){
+  for x in .gitignore .gitinit CODEOWNERS CONTRIBUTING.md README.md doc/README.md doc/uml/tables doc/codes ; do
+      message=$(basename $x)
+      git a $x ; git cm "Add $message";
+  done
+  for x in dev/* ; do
+      message=$(basename $x)
+      git a $x ; git cm "Add development tool for $message"
+  done
+  for x in database roles privileges; do
+      git a db/setups/*_create_$x ; git cm "Add setup for $x"
+  done
+}
+
+add_concept(){
+  concept=$1
+  message=${concept//_/ }
+  git a db/migrations/*_create_$x  ; git cm "Add $message migration"
+  git a db/examples/$x.sql ; git cm "Add $message example"
+}
+
+add_concepts(){
+  for x in nodes edges orgs persons places things events link_contacts email_contacts telephone_contacts postal_contacts passport_contacts contacts tags locales media_types geo_points geo_circles geo_rectangles person_names person_pronouns; do
+    add_concept $x
+  done
+}
+
+## Main
+
+add_starters
+add_concepts
+
+echo "You may want to run this now:"
+echo "git push -u origin master -f"
