@@ -23,20 +23,20 @@ CREATE TABLE nodes (
 );
 
 -- Programming-related
-CREATE INDEX ix_items_tenant_id on nodes(tenant_id);
-CREATE INDEX ix_items_typecast on nodes(typecast);
-CREATE INDEX ix_items_state on nodes(state);
+CREATE INDEX ix_nodes_tenant_id on nodes(tenant_id);
+CREATE INDEX ix_nodes_typecast on nodes(typecast);
+CREATE INDEX ix_nodes_state on nodes(state);
 
 -- Update-related
-CREATE INDEX ix_items_updated_at_timestamp_utc on nodes(updated_at_timestamp_utc);
-CREATE INDEX ix_items_updated_at_clock_count on nodes(updated_at_clock_count);
-CREATE INDEX ix_items_updated_by_text on nodes(updated_by_text);
+CREATE INDEX ix_nodes_updated_at_timestamp_utc on nodes(updated_at_timestamp_utc);
+CREATE INDEX ix_nodes_updated_at_clock_count on nodes(updated_at_clock_count);
+CREATE INDEX ix_nodes_updated_by_text on nodes(updated_by_text);
 
 -- Meta-related
-CREATE INDEX ix_items_uri on nodes(uri);
+CREATE INDEX ix_nodes_uri on nodes(uri);
 
 -- Content-related
-CREATE INDEX ix_items_text on nodes(text);
-CREATE INDEX ix_items_json on nodes(json);
-CREATE INDEX ix_items_xml on nodes USING BTREE (cast(xpath('/', xml) as text[]));
-CREATE INDEX ix_items_number on nodes(number);
+CREATE INDEX ix_nodes_text on nodes(text);
+CREATE INDEX ix_nodes_json on nodes(json);
+CREATE INDEX ix_nodes_xml on nodes USING BTREE (cast(xpath('/', xml) as text[]));
+CREATE INDEX ix_nodes_number on nodes(number);

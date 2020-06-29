@@ -1,1 +1,1 @@
-DROP TABLE geo_circles;
+DROP TABLE geo_centers;

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 i=10000000000000
-for x in nodes edges orgs persons places things events link_contacts email_contacts telephone_contacts postal_contacts passport_contacts contacts tags locales media_types geo_points ; do
+for x in nodes edges orgs persons places things events link_contacts email_contacts phone_contacts postal_contacts passport_contacts contacts tags locales media_types geo_points ; do
     src=$(ls -d *_create_${x})
     dst="${i}_create_${x}"
     if [ "$src" != "$dst" ]; then

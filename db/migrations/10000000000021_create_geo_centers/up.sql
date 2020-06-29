@@ -1,4 +1,4 @@
-CREATE TABLE geo_circles (
+CREATE TABLE geo_centers (
   id uuid not null primary key,
 
   -- Programming-related
@@ -18,15 +18,15 @@ CREATE TABLE geo_circles (
 );
 
 -- Programming-related
-CREATE INDEX ix_geo_circles_tenant_id on geo_circles(tenant_id);
-CREATE INDEX ix_geo_circles_typecast on geo_circles(typecast);
-CREATE INDEX ix_geo_circles_state on geo_circles(state);
+CREATE INDEX ix_geo_centers_tenant_id on geo_centers(tenant_id);
+CREATE INDEX ix_geo_centers_typecast on geo_centers(typecast);
+CREATE INDEX ix_geo_centers_state on geo_centers(state);
 
 -- Update-related
-CREATE INDEX ix_geo_circles_updated_at_timestamp_utc on geo_circles(updated_at_timestamp_utc);
-CREATE INDEX ix_geo_circles_updated_at_clock_count on geo_circles(updated_at_clock_count);
-CREATE INDEX ix_geo_circles_updated_by_text on geo_circles(updated_by_text);
+CREATE INDEX ix_geo_centers_updated_at_timestamp_utc on geo_centers(updated_at_timestamp_utc);
+CREATE INDEX ix_geo_centers_updated_at_clock_count on geo_centers(updated_at_clock_count);
+CREATE INDEX ix_geo_centers_updated_by_text on geo_centers(updated_by_text);
 
 -- Code-related
-CREATE INDEX ix_geo_circles_center_as_geo_point_id on geo_circles(center_as_geo_point_id);
-CREATE INDEX ix_geo_circles_radius_as_meters on geo_circles(radius_as_meters);
+CREATE INDEX ix_geo_centers_center_as_geo_point_id on geo_centers(center_as_geo_point_id);
+CREATE INDEX ix_geo_centers_radius_as_meters on geo_centers(radius_as_meters);

@@ -1,6 +1,6 @@
-INSERT INTO telephone_contacts VALUES 
+INSERT INTO phone_contacts VALUES 
 
--- Example: New York + Grand Central + telephone for Master's Office
+-- Example: New York + Grand Central + phone for Master's Office
 (
   CAST('8e238bdbf3b6c189f9e2ed65b2efbb45' as uuid), -- id
   CAST('7bd380209cd310d3ad4e7f980298cbea' as uuid), -- tenant_id
@@ -22,7 +22,7 @@ INSERT INTO telephone_contacts VALUES
   '3402583' -- e164_subscriber_number
 ),
 
--- Example: San Francisco + Ferry Building + telephone for Lost & Found
+-- Example: San Francisco + Ferry Building + phone for Lost & Found
 (
   CAST('7ea1eb5f6d9075eaa93d12a602dfddb5' as uuid), -- id
   CAST('7bd380209cd310d3ad4e7f980298cbea' as uuid), -- tenant_id

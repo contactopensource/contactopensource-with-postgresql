@@ -18,7 +18,7 @@ package Nouns {
 package Contacts {
   class link_contacts
   class email_contacts
-  class telephone_contacts
+  class phone_contacts
   class postal_contacts
   class passport_contacts
   class contacts
@@ -33,7 +33,7 @@ package Annotations {
 
 package Geolocations {
   class geo_points
-  class geo_circles
+  class geo_centers
   class geo_rectangles
 }
 
@@ -55,16 +55,16 @@ places -[hidden] things
 things -[hidden] events
 
 link_contacts -[hidden] email_contacts
-email_contacts -[hidden] telephone_contacts
-telephone_contacts -[hidden] postal_contacts
+email_contacts -[hidden] phone_contacts
+phone_contacts -[hidden] postal_contacts
 postal_contacts -[hidden] passport_contacts
 passport_contacts -[hidden] contacts
 
 tags -r[hidden] locales
 locales -r[hidden] media_types
 media_types -r[hidden] geo_points
-geo_points -r[hidden] geo_circles
-geo_circles -r[hidden] geo_rectangles
+geo_points -r[hidden] geo_centers
+geo_centers -r[hidden] geo_rectangles
 
 person_names -r[hidden] person_pronouns
 
@@ -250,7 +250,7 @@ class email_contacts {
   ·
 }
 
-class telephone_contacts {
+class phone_contacts {
   label text
   number_text text
   e164_text varchar
@@ -369,7 +369,7 @@ class geo_points {
   ·
 }
 
-class geo_circles {
+class geo_centers {
   center_as_geo_point id
   radius_as_meters numeric
   ·

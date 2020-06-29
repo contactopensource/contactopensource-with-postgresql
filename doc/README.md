@@ -16,7 +16,7 @@ We use these categories:
 
 3. Annotations: tag, code, locale, media type, geo point, etc.
 
-4. Contacts: email contact, telephone contact, postal contact, etc.
+4. Contacts: email contact, phone contact, postal contact, etc.
 
 5. Details: personal name, personal pronoun, etc.
 
@@ -327,10 +327,10 @@ CREATE TABLE `email_contacts` (
 ```
 
 
-### telephone_contacts
+### phone_contacts
 
 ```sql
-CREATE TABLE `telephone_contacts` (
+CREATE TABLE `phone_contacts` (
     …
     -- Telephone-related
     label text, -- example: 'mobile phone'
@@ -496,10 +496,10 @@ CREATE TABLE `geo_points` (
 );
 ```
 
-### geo_circles
+### geo_centers
 
 ```sql
-CREATE TABLE `geo_circles` (
+CREATE TABLE `geo_centers` (
     …
     -- Code-related
     coder_id uuid, -- example: fda15956587d3766862f72fe5ab1feea is Open Location Code

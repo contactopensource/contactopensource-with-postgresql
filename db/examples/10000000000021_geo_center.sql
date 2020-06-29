@@ -1,4 +1,4 @@
-INSERT INTO geo_circles VALUES
+INSERT INTO geo_centers VALUES
 
 -- Example: New York, Grand Central, radius 10 kilometers
 (

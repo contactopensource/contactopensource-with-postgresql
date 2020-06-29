@@ -1,4 +1,4 @@
-CREATE TABLE orgs (
+CREATE TABLE organizations (
   id uuid not null primary key,
 
   -- Programming-related
@@ -29,26 +29,26 @@ CREATE TABLE orgs (
 );
 
 -- Programming-related
-CREATE INDEX ix_orgs_tenant_id on orgs(tenant_id);
-CREATE INDEX ix_orgs_typecast on orgs(typecast);
-CREATE INDEX ix_orgs_state on orgs(state);
+CREATE INDEX ix_organizations_tenant_id on organizations(tenant_id);
+CREATE INDEX ix_organizations_typecast on organizations(typecast);
+CREATE INDEX ix_organizations_state on organizations(state);
 
 -- Update-related
-CREATE INDEX ix_orgs_updated_at_timestamp_utc on orgs(updated_at_timestamp_utc);
-CREATE INDEX ix_orgs_updated_at_clock_count on orgs(updated_at_clock_count);
-CREATE INDEX ix_orgs_updated_by_text on orgs(updated_by_text);
+CREATE INDEX ix_organizations_updated_at_timestamp_utc on organizations(updated_at_timestamp_utc);
+CREATE INDEX ix_organizations_updated_at_clock_count on organizations(updated_at_clock_count);
+CREATE INDEX ix_organizations_updated_by_text on organizations(updated_by_text);
 
 -- General-related
-CREATE INDEX ix_orgs_parent_id on orgs(parent_id);
-CREATE INDEX ix_orgs_name on orgs(name);
-CREATE INDEX ix_orgs_emoji on orgs(emoji);
+CREATE INDEX ix_organizations_parent_id on organizations(parent_id);
+CREATE INDEX ix_organizations_name on organizations(name);
+CREATE INDEX ix_organizations_emoji on organizations(emoji);
 
 -- Display-related
-CREATE INDEX ix_orgs_image_uri on orgs(image_uri);
-CREATE INDEX ix_orgs_color_hex on orgs(color_hex);
-CREATE INDEX ix_orgs_css_class on orgs(css_class);
-CREATE INDEX ix_orgs_star_count on orgs(star_count);
+CREATE INDEX ix_organizations_image_uri on organizations(image_uri);
+CREATE INDEX ix_organizations_color_hex on organizations(color_hex);
+CREATE INDEX ix_organizations_css_class on organizations(css_class);
+CREATE INDEX ix_organizations_star_count on organizations(star_count);
 
 -- Lifetime-related
-CREATE INDEX ix_orgs_start_date on orgs(start_date);
-CREATE INDEX ix_orgs_stop_date on orgs(stop_date);
+CREATE INDEX ix_organizations_start_date on organizations(start_date);
+CREATE INDEX ix_organizations_stop_date on organizations(stop_date);
