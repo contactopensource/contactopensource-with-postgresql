@@ -1,1 +1,1 @@
-DROP DATABASE contactopensource;
+DROP DATABASE contact;

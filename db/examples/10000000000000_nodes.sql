@@ -4,7 +4,7 @@ INSERT INTO nodes VALUES
 (
   CAST('c9d5a052adab471f2d0e63054a535793' as uuid), -- id
   CAST('7bd380209cd310d3ad4e7f980298cbea' as uuid), -- tenant_id
-  '', -- type
+  '', -- typecast
   '', -- state
   TO_TIMESTAMP('2020-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), -- updated_at_timestamp_utc
   0, -- updated_at_clock_count
@@ -25,7 +25,8 @@ INSERT INTO nodes VALUES
 (
   CAST('88f9eba69345b623bafcc2a50e53f2f8' as uuid), -- id
   CAST('7bd380209cd310d3ad4e7f980298cbea' as uuid), -- tenant_id
-  '', -- type
+  '', -- typecast
+  '', -- type_name
   '', -- state
   TO_TIMESTAMP('2020-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), -- updated_at_timestamp_utc
   0, -- updated_at_clock_count

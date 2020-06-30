@@ -3,8 +3,10 @@ CREATE TABLE nodes (
 
   -- Programming-related
   tenant_id uuid, -- for optional multi-tenant installation
-  typecast text, -- for optional single table inheritance
-  state text, -- for optional state machine transition
+  type_uri text, -- for optional type reference
+  type_name text, -- for optional single table inheritance
+  state_uri text, -- for optional state reference
+  state_name text, -- for optional state machine transition
 
   -- Update-related
   updated_at_timestamp_utc timestamp, -- example: 2020-01-01T00:00:00 always UTC
@@ -19,13 +21,14 @@ CREATE TABLE nodes (
   json jsonb, -- example: '{"hello": "world"}'
   xml xml, -- example: '<?xml version=\'1.0\'?><example>hello world</example>'
   number numeric(20,9) -- example: 1234.5678
-
 );
 
 -- Programming-related
 CREATE INDEX ix_nodes_tenant_id on nodes(tenant_id);
-CREATE INDEX ix_nodes_typecast on nodes(typecast);
-CREATE INDEX ix_nodes_state on nodes(state);
+CREATE INDEX ix_nodes_type_uri on nodes(type_uri);
+CREATE INDEX ix_nodes_type_name on nodes(type_name);
+CREATE INDEX ix_nodes_state_uri on nodes(state_uri);
+CREATE INDEX ix_nodes_state_name on nodes(state_name);
 
 -- Update-related
 CREATE INDEX ix_nodes_updated_at_timestamp_utc on nodes(updated_at_timestamp_utc);

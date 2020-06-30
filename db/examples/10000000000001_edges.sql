@@ -1,12 +1,11 @@
-INSERT INTO edges VALUES (
+INSERT INTO edges VALUES 
+
+-- Exampe: Edge alpha -> bravo -> charlie
+(
   CAST('264b87a8f92fdbd265f4b5543f829cc2' as uuid), -- id
-
-  -- Programming-related
   CAST('7bd380209cd310d3ad4e7f980298cbea' as uuid), -- tenant_id
-  '', -- type
+  '', -- typecast
   '', -- state
-
-  -- Update-related
   TO_TIMESTAMP('2020-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), -- updated_at_timestamp_utc
   0, -- updated_at_clock_count
   'updated by example', -- updated_by_text
@@ -39,6 +38,7 @@ INSERT INTO edges VALUES (
   -- Modifiers
   8, -- count
   8.8, -- weight
-  0.8 -- probability
+  0.8 -- unit_interval
+  -0.8 -- dual_interval
 
 );

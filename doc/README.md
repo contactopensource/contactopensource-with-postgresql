@@ -178,7 +178,8 @@ CREATE TABLE `edges` (
     -- Modifiers
     count bigint, -- count, such as an instance index; example: 10 means count 10
     weight numeric(10,9), -- weight, -1 to 1 inclusive; example: 0.1 means weight 10%
-    probability numeric(10,9) -- probability, 0 to 1 inclusive; example: 0.1 means probability 10%
+    unit_interval numeric(10,9) -- unit interval, 0 to 1 inclusive; example: 0.1 means unit interval 10%
+    dual_interval numeric(10,9) -- dual interval, -1 to 1 inclusive; example: -0.1 means dual interval -10%
 );
 ```
 

@@ -1,11 +1,24 @@
-# Contact Open Source as PostgreSQL
+# Contact Open Source with PostgreSQL
 
-Contact Open Source is free contact management software, akin to a contacts app, or address book, or customer relationship manganer (CRM).
+[Contact Open Source](https://github.com/contactopensource) is free contact management software, akin to a contacts app, or address book, or customer relationship manager (CRM).
+
+This repository is an implementation with a PostgreSQL database and structured query language (SQL) database files.
+
+We welcome feedback.
 
 
 ## Introduction
 
 The goal of this project is to provide free, open, modern software that is especially easy to change and adapt by software programmers, application developers, and database administrators.
+
+
+## Implementation
+
+We aim to use SQL standard current syntax when possible, and otherwise use PostgreSQL syntax when necessary.
+
+We welcome contributing code that provides additional syntax, such as specialized files for specific databases, such as PostgreSQL, MySQL, SQL Server, Oracle DB, Amazon Aurora, etc.
+
+We encourage you to extend this code as you like, for your own kinds of SQL and your own goals.
 
 
 ## Ideas

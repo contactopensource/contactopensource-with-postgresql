@@ -1,1 +1,1 @@
-CREATE DATABASE contactopensource;
+CREATE DATABASE contact;

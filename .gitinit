@@ -25,7 +25,7 @@ add_concept(){
 }
 
 add_concepts(){
-  for x in nodes edges orgs persons places things events link_contacts email_contacts phone_contacts postal_contacts passport_contacts contacts tags locales media_types geo_points geo_centers geo_rectangles person_names person_pronouns; do
+  for x in $(cat ../contactopensource_help/config/domain-model-list); do
     add_concept $x
   done
 }

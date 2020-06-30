@@ -1,17 +1,24 @@
-REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM contactopensource_reader;
-REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public FROM contactopensource_reader;
-REVOKE ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public FROM contactopensource_reader;
-REVOKE USAGE ON SCHEMA public FROM contactopensource_reader;
-REVOKE ALL PRIVILEGES ON DATABASE contactopensource FROM contactopensource_reader;
-DROP OWNED BY contactopensource_reader;
-REASSIGN OWNED BY contactopensource_reader TO postgres;
-DROP ROLE contactopensource_reader;
+----
+-- Remove any remaining role capabiltiies.
+--
+-- Before you run this down migration, you will most likely want to run 
+-- the down migration that removes all the role privileges.
+--
+-- If you get this kind of error message:
+--
+--     ERROR:  role "contact_leader" cannot 
+--     be dropped because some objects depend on it
+--
+-- Then one way to solve it is to reassign ownership:
+--
+--    REASSIGN OWNED BY contact_leader TO postgres;
+----
 
-REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM contactopensource_reader_administrator;
-REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public FROM contactopensource_reader_administrator;
-REVOKE ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public FROM contactopensource_administrator;
-REVOKE USAGE ON SCHEMA public FROM contactopensource_administrator;
-REVOKE ALL PRIVILEGES ON DATABASE contactopensource FROM contactopensource_administrator;
-DROP OWNED BY contactopensource_administrator;
-REASSIGN OWNED BY contactopensource_administrator; TO postgres;
-DROP ROLE contactopensource_administrator;
+DROP OWNED BY contact_leader;
+DROP ROLE contact_leader;
+
+DROP OWNED BY contact_reader;
+DROP ROLE contact_reader;
+
+DROP OWNED BY contact_writer;
+DROP ROLE contact_writer;

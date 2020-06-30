@@ -122,7 +122,8 @@ __ Lifecycle __
 __ Modifiers __
   count integer
   weight decimal
-  probability decimal
+  unit_interval decimal
+  dual_interval decimal
 }
 
 class orgs {
@@ -371,7 +372,7 @@ class geo_points {
 
 class geo_centers {
   center_as_geo_point id
-  radius_as_meters numeric
+  spread_as_meters numeric
   ·
   ·
   ·
