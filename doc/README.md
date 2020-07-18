@@ -59,7 +59,15 @@ All tables have these metadata columns:
 
 ```sql
 CREATE TABLE `examples` (
-    id uuid not null primary key,
+    id text not null primary key,
+  updated_at_timestamp_utc timestamp, -- example: 2020-01-01T00:00:00 always UTC
+  updated_at_clock_count bigint, -- example: 123456789 as suitable for a vector clock
+  tenant_id text, -- for optional tenant, such as a multi-tenant installation
+  parent_id text, -- for optional parent, such as a parent-child relationship
+  set_id text, -- for optional set, such as namespacing
+  type_id text, -- for optional type, such as single table inheritance
+  state_id text, -- for optional state, such as a state machine
+
 
     -- Programming-related
     tenant_id uuid, -- for optional multi-tenant installation
@@ -69,7 +77,7 @@ CREATE TABLE `examples` (
     -- Update-related
     updated_at_timestamp_utc timestamp, -- example: 2020-01-01T00:00:00 always UTC
     updated_at_clock_count bigint, -- example: 123456789 as suitable for a vector clock
-    updated_by_text text, -- example: explanation of who updated the contact, why, how, etc.
+    update_text text, -- example: explanation of who updated the contact, why, how, etc.
 
     -- Meta-related -- the intent is to describe the content fields below.
     uri text, -- example: 'https://example.com/example.txt'
@@ -315,10 +323,10 @@ CREATE TABLE `link_contacts` (
     uri text -- example: 'http://example.com/example.html'
 ```
 
-### email_contacts
+### contact_emails
 
 ```sql
-CREATE TABLE `email_contacts` (
+CREATE TABLE `contact_emails` (
     …
     -- Email-related
     address text, -- example: 'Alice Adams <alice@example.com>' -- see https://tools.ietf.org/html/rfc5322
@@ -328,10 +336,10 @@ CREATE TABLE `email_contacts` (
 ```
 
 
-### phone_contacts
+### contact_phones
 
 ```sql
-CREATE TABLE `phone_contacts` (
+CREATE TABLE `contact_phones` (
     …
     -- Telephone-related
     label text, -- example: 'mobile phone'
@@ -347,10 +355,10 @@ CREATE TABLE `phone_contacts` (
 ```
 
 
-### postal_contacts
+### contact_postals
 
 ```sql
-CREATE TABLE `postal_contacts` (
+CREATE TABLE `contact_postals` (
     …
     -- Postal-related
     country_text text, -- example: 'US' is United States
@@ -365,10 +373,10 @@ CREATE TABLE `postal_contacts` (
 ```
 
 
-### passport_contacts
+### contact_passports
 
 ```sql
-CREATE TABLE `passport_contacts` (
+CREATE TABLE `contact_passports` (
     …
     -- Place-related
     country_text text, -- example: 'US' is United States
@@ -397,10 +405,10 @@ CREATE TABLE `contacts` (
 );
 ```
 
-### passport_contacts
+### contact_passports
 
 ```sql
-CREATE TABLE `passport_contacts` (
+CREATE TABLE `contact_passports` (
     …
     -- Tag-related
     text text -- example: 'trending'
@@ -497,10 +505,10 @@ CREATE TABLE `geo_points` (
 );
 ```
 
-### geo_centers
+### geo_point_centers
 
 ```sql
-CREATE TABLE `geo_centers` (
+CREATE TABLE `geo_point_centers` (
     …
     -- Code-related
     coder_id uuid, -- example: fda15956587d3766862f72fe5ab1feea is Open Location Code

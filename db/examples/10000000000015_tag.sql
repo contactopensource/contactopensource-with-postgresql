@@ -1,4 +1,12 @@
--- Example of tags that are geographic codes for places.
+-- A tag can be a simple hashtag word.
+--
+-- Examples:
+--
+--   * "newyork" is our example hashtag for New York
+--
+--   * "sanfrancisco" is our example hashtag for San Francisco
+--
+-- A tag can be a geographic code for a place.
 --
 -- Codes:
 --
@@ -16,9 +24,43 @@
 --
 INSERT INTO tags VALUES 
 
--- Example: Grand Central, New York, NY, US + Open Location Code
+-- Example: New York
 (
   '353fc6f3bfc3c56a5a687f9a986af0da', -- id
+  TO_TIMESTAMP('2020-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), -- updated_at_timestamp_utc
+  0, -- updated_at_clock_count
+  '', -- tenant_id
+  '', -- parent_id
+  '', -- set_id
+  '', -- type_id
+  '', -- state_id
+
+  -- Tag-related
+  '6a8c63f0505bb15f17f13ecc0265f450', -- set_id for Twitter
+  NULL, -- parent_id
+  'newyork' -- text
+),
+
+-- Example: San Francisco
+(
+  '3bb2085aa5bce9506452fe8ebb9d0103', -- id
+  TO_TIMESTAMP('2020-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), -- updated_at_timestamp_utc
+  0, -- updated_at_clock_count
+  '', -- tenant_id
+  '', -- parent_id
+  '', -- set_id
+  '', -- type_id
+  '', -- state_id
+
+  -- Tag-related
+  '6a8c63f0505bb15f17f13ecc0265f450', -- set_id for Twitter
+  NULL, -- parent_id
+  'sanfrancisco' -- text
+),
+
+-- Example: Grand Central, New York, NY, US + Open Location Code
+(
+  '6e8e948d776612ddec233f65f6722324', -- id
   TO_TIMESTAMP('2020-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), -- updated_at_timestamp_utc
   0, -- updated_at_clock_count
   '', -- tenant_id
@@ -72,7 +114,7 @@ INSERT INTO tags VALUES
 
 -- Example: Ferry Building, San Francisco, CA, US + Open Location Code
 (
-  'a15b731ccf676e1340caa969fc3a43cc', -- id
+  '7fd5e5969b5a69ce1149263854a868e8', -- id
   TO_TIMESTAMP('2020-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS'), -- updated_at_timestamp_utc
   0, -- updated_at_clock_count
   '', -- tenant_id

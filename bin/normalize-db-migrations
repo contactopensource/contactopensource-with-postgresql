@@ -1,0 +1,7 @@
+#!/bin/sh
+pushd db/migrations
+cat ~/git/contactopensource/contactopensource/doc/uml/tables.txt | 
+xargs -I x echo "_create_xs" | 
+~/git/sixarm/sixarm_git_scripts/bin/git-mv-renumber-timestamp-path-names 
+popd
+
